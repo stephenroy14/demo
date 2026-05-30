@@ -1,0 +1,23 @@
+INNER JOIN
+SELECT A.col1, A.col2, B.col3
+FROM   table_A A
+INNER JOIN table_B B
+    ON A.common_col = B.common_col;
+LEFT OUTER JOIN
+SELECT A.col1, A.col2, B.col3
+FROM   table_A A
+LEFT OUTER JOIN table_B B
+    ON A.common_col = B.common_col;
+FULL OUTER JOIN
+SELECT A.col1, A.col2, B.col3
+FROM   table_A A
+FULL OUTER JOIN table_B B
+    ON A.common_col = B.common_col;
+CROSS JOIN
+SELECT A.col1, B.col2
+FROM   table_A A
+CROSS JOIN table_B B;
+SELF JOIN
+SELECT T1.col1 AS Alias1, T2.col1 AS Alias2
+FROM   table_name T1, table_name T2
+WHERE  T1.id <> T2.id;
