@@ -1,0 +1,36 @@
+String Functions
+-- Convert to uppercase
+SELECT UPPER(col1) AS UpperCol  FROM table_name;
+
+-- Get string length
+SELECT col1, LENGTH(col1) AS ColLength  FROM table_name;
+
+-- Concatenate columns
+SELECT CONCAT(col1, ' ', col2) AS FullName  FROM table_name;
+
+-- Trim whitespace
+SELECT TRIM('  some text  ') AS Trimmed;
+
+-- Replace substring
+SELECT REPLACE(col1, 'old_str', 'new_str') AS Updated  FROM table_name;
+
+-- Pattern matching with LIKE
+SELECT col1, col2
+FROM   table_name
+WHERE  col2 LIKE '%pattern%';
+Aggregate Functions
+SELECT COUNT(*) AS TotalRows   FROM table_name;
+SELECT SUM(col1)  AS Total       FROM table_name;
+SELECT AVG(col1)  AS Average     FROM table_name;
+SELECT MAX(col1)  AS Highest     FROM table_name;
+SELECT MIN(col1)  AS Lowest      FROM table_name;
+ORDER BY & GROUP BY & HAVING
+-- ORDER BY (ASC default, DESC optional)
+SELECT * FROM table_name ORDER BY col1 ASC;
+SELECT * FROM table_name ORDER BY col1 DESC;
+
+-- GROUP BY with HAVING
+SELECT   col1, AVG(col2) AS Avg_Val
+FROM     table_name
+GROUP BY col1
+HAVING   AVG(col2) > threshold_value;
